@@ -2,7 +2,7 @@
   "name": "js_aio_laboratory",
   "version": "1.0.0",
   "description": "자바스크립트 라이브러리 실험실",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
