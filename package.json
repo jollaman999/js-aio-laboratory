@@ -4,7 +4,7 @@
   "description": "자바스크립트 라이브러리 실험실",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
