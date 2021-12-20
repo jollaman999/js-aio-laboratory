@@ -13,10 +13,15 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.jpg/,
-        type: 'asset/resource',
+        test: /\.jpg|png$/i,
+        type: 'asset',
         generator: {
-          filename: './image/[hash][ext][query]',
+          filename: './image/[name][ext]',
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 2 * 1024, // 2kb
+          },
         },
       },
     ],
