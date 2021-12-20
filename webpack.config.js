@@ -4,6 +4,6 @@ module.exports = {
   mode: 'development',
   entry: '/src/index.js',
   output: {
-    path: path.resolve('./dist'),
+    path: path.resolve(__dirname, 'dist'),
   },
 };
