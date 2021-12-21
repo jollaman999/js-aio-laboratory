@@ -3,13 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: '/src/index.js',
+  entry: {
+    index: ['core-js/stable', 'regenerator-runtime/runtime', '/src/index.js'],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/',
     filename: '[name]-[contenthash].js',
     clean: true,
-    publicPath: '/dist/',
   },
+  target: ['web', 'es5'],
   module: {
     rules: [
       {
