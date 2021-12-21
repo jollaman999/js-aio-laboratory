@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]-[contenthash].js',
     clean: true,
+    publicPath: '/dist/',
   },
   module: {
     rules: [
@@ -24,6 +25,16 @@ module.exports = {
         parser: {
           dataUrlCondition: {
             maxSize: 2 * 1024, // 2kb
+          },
+        },
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/preset-env']],
           },
         },
       },

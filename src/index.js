@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import './style/main.css';
 
 function component() {
@@ -6,6 +5,9 @@ function component() {
 
   // Lodash, now imported by this script
   element.classList.add('smile_ico');
+
+  const sum = (a, b) => a + b;
+  console.log(sum(1, 2));
 
   return element;
 }
