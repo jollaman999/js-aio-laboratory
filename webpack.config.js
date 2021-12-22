@@ -13,6 +13,7 @@ module.exports = {
     clean: true,
   },
   target: ['web', 'es5'],
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
