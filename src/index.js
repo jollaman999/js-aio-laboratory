@@ -1,6 +1,6 @@
 import './style/main.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import './sample/react.js';
+import './sample/redux.js';
 
 function component() {
   const element = document.createElement('div');
@@ -11,11 +11,3 @@ function component() {
 }
 
 document.body.appendChild(component());
-
-class HelloMessage extends React.Component {
-  render() {
-    return <div>Hello {this.props.name}</div>;
-  }
-}
-
-ReactDOM.render(<HelloMessage name='React' />, document.getElementById('root'));
