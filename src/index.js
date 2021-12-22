@@ -1,15 +1,21 @@
 import './style/main.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 function component() {
   const element = document.createElement('div');
 
-  // Lodash, now imported by this script
   element.classList.add('smile_ico');
-
-  const sum = (a, b) => a + b;
-  console.log(sum(1, 2));
 
   return element;
 }
 
 document.body.appendChild(component());
+
+class HelloMessage extends React.Component {
+  render() {
+    return <div>Hello {this.props.name}</div>;
+  }
+}
+
+ReactDOM.render(<HelloMessage name='React' />, document.getElementById('root'));
