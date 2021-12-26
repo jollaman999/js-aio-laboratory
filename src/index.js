@@ -11,4 +11,14 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+const smile = component();
+document.body.appendChild(smile);
+
+console.log('ssasas');
+
+if (module.hot && process.env.NODE_ENV === 'development') {
+  module.hot.accept();
+  module.hot.dispose(function () {
+    document.body.removeChild(smile);
+  });
+}

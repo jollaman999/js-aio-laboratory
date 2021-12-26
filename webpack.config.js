@@ -8,12 +8,15 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    publicPath: '/',
     filename: '[name]-[contenthash].js',
     clean: true,
   },
   target: ['web', 'es5'],
   devtool: 'eval-source-map',
+  devServer: {
+    port: 7000,
+  },
   module: {
     rules: [
       {
