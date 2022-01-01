@@ -2,6 +2,12 @@ import './style/main.css';
 import './sample/react.js';
 import './sample/redux.js';
 import './sample/react-redux.js';
+import lodash from 'lodash';
+import * as S from 'fxjs/Strict';
+import * as L from 'fxjs/Lazy';
+import * as C from 'fxjs/Concurrency';
+import moment from 'moment';
+import moment_timezone from 'moment-timezone';
 
 function component() {
   const element = document.createElement('div');
@@ -14,7 +20,7 @@ function component() {
 const smile = component();
 document.body.appendChild(smile);
 
-console.log('ssasas');
+export { lodash, S, L, C, moment, moment_timezone };
 
 if (module.hot && process.env.NODE_ENV === 'development') {
   module.hot.accept();
