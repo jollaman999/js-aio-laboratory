@@ -1,11 +1,9 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    index: ['core-js/stable', 'regenerator-runtime/runtime', '/src/index.js'],
-  },
+  entry: ['core-js/stable', 'regenerator-runtime/runtime', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
@@ -25,10 +23,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.jpg|png$/i,
+        test: /\.jpg|ico$/i,
         type: 'asset',
         generator: {
-          filename: './image/[name][ext]',
+          filename: 'image/[name][ext]',
         },
         parser: {
           dataUrlCondition: {
@@ -37,12 +35,12 @@ module.exports = {
         },
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [['@babel/preset-env'], ['@babel/preset-react']],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
       },
@@ -51,7 +49,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: './index.html',
     }),
   ],
+  resolve: {
+    fallback: {
+      os: require.resolve('os-browserify/browser'),
+      path: require.resolve('path-browserify'),
+      buffer: require.resolve('buffer'),
+    },
+  },
 };
