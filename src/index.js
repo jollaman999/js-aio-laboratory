@@ -2,6 +2,7 @@ import './style/main.css';
 import './sample/react.js';
 import './sample/redux.js';
 import './sample/react-redux.js';
+import './sample/redux-thunk';
 import _ from 'lodash';
 import * as S from 'fxjs/Strict';
 import * as L from 'fxjs/Lazy';
