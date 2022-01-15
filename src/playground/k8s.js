@@ -38,7 +38,7 @@ export const 변경후 = chain(SECRET_CONFIG_MAP)
   })
   .value();
 
-console.log(isEqual(변경전, 변경후));
+// console.log(isEqual(변경전, 변경후));
 
 export const 변경전2 = map(
   reduce(
@@ -71,4 +71,4 @@ export const 변경후2 = chain(concat(CONFIG_MAP, SECRET))
   })
   .value();
 
-console.log(변경전2, 변경후2);
+// console.log(변경전2, 변경후2);

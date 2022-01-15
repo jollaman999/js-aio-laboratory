@@ -31,13 +31,13 @@ const store = createStore(rootReducer, INITIAL_STATE, applyMiddleware(thunk));
 
 store.dispatch(fetchUser(Math.floor(Math.random() * 10) + 1));
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
+// store.subscribe(() => {
+//   console.log(store.getState());
+// });
 
 function Component() {
   const user = useSelector(state => state.user);
-  console.log('selector', user)
+  // console.log('selector', user)
   return (
     <>
       {user?.name}
