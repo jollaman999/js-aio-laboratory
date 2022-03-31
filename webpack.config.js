@@ -16,6 +16,9 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     port: 7000,
+    client: {
+      overlay: false
+    }
   },
   module: {
     rules: [
@@ -36,6 +39,11 @@ module.exports = {
         },
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -43,9 +51,6 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           },
-        },
-        resolve: {
-          extensions: ['.js', '.jsx'],
         },
       },
     ],
@@ -64,5 +69,6 @@ module.exports = {
       path: require.resolve('path-browserify'),
       buffer: require.resolve('buffer'),
     },
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 };
